@@ -25,6 +25,19 @@ router.get('/:id', validateId, (req, res) => {
     res.status(200).json(req.data);
 })
 
+router.get('/:id/actions', (req, res) => {
+    const id = req.params.id
+    projectsMethod.getProjectActions(id)
+    .then(result => {
+      if(result) {
+        res.status(200).json(result)
+      } else {
+        res.status(400).json({ errorMessage: `no project at id ${id}`})
+      }
+    })
+    .catch(err => console.error(err))
+  })
+
 router.post('/', validateBody, (req, res) => {
     projectsMethod.insert(req.body)
     .then(result => {
@@ -45,7 +58,7 @@ router.put('/:id', validateId, validateBody, (req, res) => {
         }
     })
     .catch(err => {
-        res.status(500).json({ message: "error" });
+        res.status(500).json({ message: "error found here" });
     });
 })
 

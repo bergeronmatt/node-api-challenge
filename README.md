@@ -42,7 +42,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
     - Two parts of express are the middleware and the routing functions.
 
 - [ ] Describe Middleware?
-    - Middleware functes get the request and response objects, operates on them, and can trigger some actions when specified, such as logging in or security.
+    - Middleware functions get the request and response objects, operates on them, and can trigger some actions when specified, such as logging in or security.
 
 - [ ] Describe a Resource?
     - A resource is some kind of data point or data set that clients can interact with through the back end. This can be things like their log in information or an array of data sets.
