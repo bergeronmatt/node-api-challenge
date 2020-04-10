@@ -8,6 +8,7 @@ const router = express.Router();
 const actionMethod = require('../data/helpers/actionModel');
 const projectMethod = require('../data/helpers/projectModel');
 
+//endpoints
 
 router.get('/', (req, res) => {
     actionMethod.get()
@@ -104,7 +105,7 @@ function validateBody(req, res, next){
         res.status(400).json({message: 'missing data'})
     } else if (!req.body.notes || !req.body.description) {
         res.status(400).json({message: 'missing data field'})
-    } else if (req.body.description.lengt > 128){
+    } else if (req.body.description.length > 128){
         res.status(400).json({message: 'description too long'})
     } else if (req.body.completed !== undefined){
         req.body.complete = !!Number(req.body.completed);

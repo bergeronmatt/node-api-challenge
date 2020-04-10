@@ -9,14 +9,6 @@ const actionRoutes = require('./routes/actions.js');
 
 server.use(express.json());
 
-
-
-const port = process.env.PORT || 5000;
-
-server.listen(port, () => {
-    console.log(`===SERVER LISTENING ON http://localhost:${5000}===`)
-})
-
 server.use('/api/projects', projectRoutes);
 server.use('/api/actions', actionRoutes);
 
@@ -24,3 +16,10 @@ server.use('/api/actions', actionRoutes);
 server.get('/', (req, res) => {
     res.send('<h1> NODE API SPRINT </h1>');
 });
+
+const port = process.env.PORT || 5000;
+
+server.listen(port, () => {
+    console.log(`===SERVER LISTENING ON http://localhost:${5000}===`)
+})
+
